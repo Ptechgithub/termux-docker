@@ -34,19 +34,6 @@ step1() {
 }
 
 step2() {
-    # Configure udhcpc settings
-    mkdir -p /etc/udhcpc
-    echo "RESOLV_CONF=\"no\"" > /etc/udhcpc/udhcpc.conf
-
-    # Configure resolv.conf
-    echo "nameserver 1.1.1.1" > /etc/resolv.conf
-    echo "nameserver 8.8.8.8" >> /etc/resolv.conf
-
-    # Run initial Alpine Linux setup
-    setup-alpine
-}
-
-step3() {
     # Ask the user for RAM size or use default (512MB)
     read -p "Enter the RAM size in megabytes ( default: 512 ): " ram_size
     ram_size="${ram_size:-512}"
@@ -60,7 +47,6 @@ echo " "
 echo "Select an option:"
 echo "1) Step 1"
 echo "2) Step 2"
-echo "3) Step 3"
 echo "0) Exit"
 read -p "Enter your choice: " choice
 case "$choice" in
@@ -69,9 +55,6 @@ case "$choice" in
         ;;
     2)
         step2
-        ;;
-    3)
-        step3
         ;;
     0)   
         exit
