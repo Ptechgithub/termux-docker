@@ -1,5 +1,17 @@
 #!/bin/bash
 
+check_dependencies() {
+    local dependencies=("wget" "lsof" "iptables" "unzip" "gcc" "git" "curl" "tar")
+    
+    for dep in "${dependencies[@]}"; do
+        if ! command -v "${dep}" &> /dev/null; then
+            echo "${dep} is not installed. Installing..."
+            sudo "${package_manager}" install "${dep}" -y
+        fi
+    done
+}
+check_dependencies
+
 # Update the system and install required packages
 pkg update && pkg upgrade -y
 pkg update
