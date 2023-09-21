@@ -12,7 +12,7 @@ check_dependencies() {
 }
 
 # Update the system and install required packages
-pkg update-y
+pkg update -y
 pkg upgrade -y
 pkg update
 check_dependencies
