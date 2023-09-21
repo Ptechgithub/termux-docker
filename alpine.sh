@@ -33,6 +33,3 @@ qemu-img create -f qcow2 alpine.qcow2 "${storage}G"
 read -p "Enter the RAM size in megabytes (default: 512): " ram_size
 ram_size="${ram_size:-512}"
 qemu-system-x86_64 -m "${ram_size}" -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 -cdrom alpine-virt-3.18.3-x86_64.iso -nographic alpine.qcow2
-
-# Run initial Alpine Linux setup
-setup-alpine
