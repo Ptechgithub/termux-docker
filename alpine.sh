@@ -6,7 +6,7 @@ check_dependencies() {
     for dep in "${dependencies[@]}"; do
         if ! command -v "${dep}" &> /dev/null; then
             echo "${dep} is not installed. Installing..."
-            sudo "${package_manager}" install "${dep}" -y
+            pkg install "${dep}" -y
         fi
     done
 }
