@@ -1,7 +1,7 @@
 #!/bin/bash
 
 clear
-echo "By2 --> Peyman * Github.com/Ptechgithub * "
+echo "By --> Peyman * Github.com/Ptechgithub * "
 
 check_dependencies() {
     local dependencies=("wget" "curl" "qemu-system-x86-64-headless" "qemu-utils")
