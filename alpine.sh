@@ -1,7 +1,7 @@
 #!/bin/bash
 
 check_dependencies() {
-    local dependencies=("wget" "curl")
+    local dependencies=("wget" "curl" "qemu-system-x86-64-headless" "qemu-utils")
     
     for dep in "${dependencies[@]}"; do
         if ! command -v "${dep}" &> /dev/null; then
@@ -10,12 +10,11 @@ check_dependencies() {
         fi
     done
 }
-check_dependencies
 
 # Update the system and install required packages
 pkg update && pkg upgrade -y
 pkg update
-pkg install qemu-system-x86-64-headless qemu-utils wget -y
+check_dependencies
 
 # Create a directory and download Alpine Linux ISO
 mkdir alpine && pushd alpine
