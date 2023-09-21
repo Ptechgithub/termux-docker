@@ -18,7 +18,7 @@ pkg update
 pkg install qemu-system-x86-64-headless qemu-utils wget -y
 
 # Create a directory and download Alpine Linux ISO
-mkdir alpine && cd alpine
+mkdir alpine && pushd alpine
 wget https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/x86_64/alpine-virt-3.18.3-x86_64.iso
 
 # Create a qcow2 file
