@@ -34,6 +34,8 @@ step1() {
 }
 
 step2() {
+    apk update -y
+    apk add bash curl -y
     # Configure udhcpc settings
     mkdir -p /etc/udhcpc
     echo "RESOLV_CONF=\"no\"" > /etc/udhcpc/udhcpc.conf
