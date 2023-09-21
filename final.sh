@@ -39,6 +39,7 @@ step2() {
     ram_size="${ram_size:-512}"
     a="qemu-system-x86_64 -m "${ram_size}" -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 -nographic alpine.qcow2"
     echo $a > alpine/alpine.sh
+    chmod +x alpine/alpine.sh
     echo "finished"
 }
 
