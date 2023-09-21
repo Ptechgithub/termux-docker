@@ -20,3 +20,13 @@ echo "nameserver 1.1.1.1" > /etc/resolv.conf
 ``
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 ``
+rc-update add networking
+poweroff
+apk update
+
+
+part2;
+
+vi /etc/apk/repositories
+# Uncomment line 3
+
