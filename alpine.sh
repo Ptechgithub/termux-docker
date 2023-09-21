@@ -1,7 +1,7 @@
 #!/bin/bash
 
 check_dependencies() {
-    local dependencies=("wget" "lsof" "iptables" "unzip" "gcc" "git" "curl" "tar")
+    local dependencies=("wget" "curl")
     
     for dep in "${dependencies[@]}"; do
         if ! command -v "${dep}" &> /dev/null; then
