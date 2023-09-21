@@ -34,13 +34,5 @@ read -p "Enter the RAM size in megabytes (default: 512): " ram_size
 ram_size="${ram_size:-512}"
 qemu-system-x86_64 -m "${ram_size}" -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 -cdrom alpine-virt-3.18.3-x86_64.iso -nographic alpine.qcow2
 
-# Configure udhcpc settings
-mkdir -p /etc/udhcpc
-echo "RESOLV_CONF=\"no\"" > /etc/udhcpc/udhcpc.conf
-
-# Configure resolv.conf
-echo "nameserver 1.1.1.1" > /etc/resolv.conf
-echo "nameserver 8.8.8.8" >> /etc/resolv.conf
-
 # Run initial Alpine Linux setup
 setup-alpine
