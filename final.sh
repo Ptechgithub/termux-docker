@@ -34,6 +34,7 @@ step1() {
 }
 
 step2() {
+    cd alpine
     # Ask the user for RAM size or use default (512MB)
     read -p "Enter the RAM size in megabytes ( default: 512 ): " ram_size
     ram_size="${ram_size:-512}"
