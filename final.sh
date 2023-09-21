@@ -34,12 +34,11 @@ step1() {
 }
 
 step2() {
-    cd alpine
     # Ask the user for RAM size or use default (512MB)
     read -p "Enter the RAM size in megabytes ( default: 512 ): " ram_size
     ram_size="${ram_size:-512}"
     a="qemu-system-x86_64 -m "${ram_size}" -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 -nographic alpine.qcow2"
-    echo $a > alpine.sh
+    echo $a > alpine/alpine.sh
     echo "finished"
 }
 
