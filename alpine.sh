@@ -10,9 +10,11 @@ mkdir alpine && cd alpine
 wget https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/x86_64/alpine-virt-3.18.3-x86_64.iso
 
 # Create a qcow2 file
-qemu-img create -f qcow2 alpine.qcow2 10G
+read -p "Enter the storage size in gigabytes (e.g., 10): " storage
+qemu-img create -f qcow2 alpine.qcow2 $storageG
 
 # Run the virtual machine
+read -p "Enter the  RAM size in megabytes (e.g., 512): " ram_size
 qemu-system-x86_64 -m 512 -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 -nographic alpine.qcow2
 
 # Configure udhcpc settings
