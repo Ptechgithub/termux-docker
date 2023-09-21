@@ -1,7 +1,7 @@
 #!/bin/bash
 
 clear
-echo "By --> Peyman * Github.com/Ptechgithub * "
+echo "By 2--> Peyman * Github.com/Ptechgithub * "
 
 check_dependencies() {
     local dependencies=("wget" "curl" "qemu-system-x86-64-headless" "qemu-utils")
@@ -24,13 +24,14 @@ check_dependencies
 mkdir alpine && cd alpine
 wget https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/x86_64/alpine-virt-3.18.3-x86_64.iso
 
-# Create a qcow2 file
-read -p "Enter the storage size in gigabytes (e.g., 10): " storage
+# Ask the user for storage size or use default (10GB)
+read -p "Enter the storage size in gigabytes (default: 10): " storage
+storage="${storage:-10}"
 qemu-img create -f qcow2 alpine.qcow2 "${storage}G"
 
-
-# Run the virtual machine
-read -p "Enter the  RAM size in megabytes (e.g., 512): " ram_size
+# Ask the user for RAM size or use default (512MB)
+read -p "Enter the RAM size in megabytes (default: 512): " ram_size
+ram_size="${ram_size:-512}"
 qemu-system-x86_64 -m "${ram_size}" -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 -cdrom alpine-virt-3.18.3-x86_64.iso -nographic alpine.qcow2
 
 # Configure udhcpc settings
