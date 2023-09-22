@@ -88,7 +88,7 @@ dockerd -H tcp://0.0.0.0:2074 --iptables=false
 # termux
 ```
 export DOCKER_HOST=localhost:2074
-echo "export DOCKER_ HOST=localhost:2074" >> ~/.bashrc ; bash
+echo "export DOCKER_HOST=localhost:2074" >> ~/.bashrc ; bash
 
 ```
 
