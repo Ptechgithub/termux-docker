@@ -70,8 +70,12 @@ service docker status
 
 # docker in termux
 
+pkg update -y
+
+pkg install docker -y
+
+alpine
 ```
-poweroff
 service docker start
 service docker stop
 nano alpine.sh
