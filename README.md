@@ -22,13 +22,16 @@ echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 ``
 setup-alpine 
 
-apk update  --->if you see error:run bellow command
+``
 rc-update add networking
-
+``
+``
 poweroff
+``
 
+``
 apk update
-
+``
 
 part2;
 
