@@ -66,10 +66,8 @@ apk update
 
 ``
 apk add docker
-``
-
-```
 service docker start
+service docker status
 service docker stop
 nano alpine.sh
 pkg install root-repo -y
