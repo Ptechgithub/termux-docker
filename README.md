@@ -69,6 +69,7 @@ service docker status
 ```
 # docker in termux
 
+```
 service docker start
 service docker stop
 nano alpine.sh
