@@ -31,7 +31,7 @@ apk update
 part2;
 
 vi /etc/apk/repositories
-# Uncomment line 3
+Uncomment line 3
 apk update
 apk add docker
 service docker start
