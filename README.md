@@ -80,9 +80,11 @@ alpine
 ```
 service docker start
 service docker stop
-nano alpine.sh
-pkg install root-repo -y
-dockerd -H tcp://127.0.0.1:2074 --iptables=false
+```
+
+termux
+```
+dockerd -H tcp://0.0.0.0:2074 --iptables=false
 
 export DOCKER_HOST=localhost:2375
 echo "export DOCKER_ HOST=localhost:2074" >> ~/.bashrc ; bash
