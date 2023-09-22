@@ -1,7 +1,7 @@
 #!/bin/bash
 
 check_dependencies() {
-    local dependencies=("wget" "curl" "qemu-system-x86-64-headless" "qemu-utils" "root-repo")
+    local dependencies=("wget" "curl" "qemu-system-x86-64-headless" "qemu-utils" "root-repo" "openssh")
     
     for dep in "${dependencies[@]}"; do
         if ! command -v "${dep}" &> /dev/null; then
