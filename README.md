@@ -20,8 +20,11 @@ echo "nameserver 1.1.1.1" > /etc/resolv.conf
 ``
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 ``
+
 rc-update add networking
+
 poweroff
+
 apk update
 
 
@@ -34,11 +37,13 @@ apk add docker
 service docker start
 service docker stop
 nano alpine.sh
-
-dockerd -H tcp://0.0.0.0:2375 --iptables=false
+pkg install root-repo -y
+dockerd -H tcp://127.0.0.1:2375 --iptables=false
 
 export DOCKER_HOST=localhost:2375
-$ echo "export DOCKER_ HOST=localhost:2375" >> ~/.bashrc
+echo "export DOCKER_ HOST=localhost:2375" >> ~/.bashrc ; bash
+
+ssh root@localhost -p 2222
 
 
 
