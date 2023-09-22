@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# hhj
 check_dependencies() {
     local dependencies=("wget" "curl" "qemu-system-x86-64-headless" "qemu-utils" "root-repo" "openssh")
     
