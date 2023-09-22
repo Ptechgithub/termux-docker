@@ -51,6 +51,8 @@ service sshd restart
 ssh -L 8080:localhost:80 -N -f root@localhost -p 2222
 
 ```
+- ps -aux
+
 
 part2;
 
@@ -91,7 +93,7 @@ echo "export DOCKER_ HOST=localhost:2074" >> ~/.bashrc ; bash
 ```
 
 
-- ps -aux
+
 
 
 
