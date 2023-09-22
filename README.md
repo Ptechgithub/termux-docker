@@ -54,7 +54,8 @@ ssh -L 8080:localhost:80 -N -f root@localhost -p 2222
 
 part2;
 
-``
+```
+
 vi /etc/apk/repositories
 ``
 Uncomment line 3
