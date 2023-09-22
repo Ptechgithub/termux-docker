@@ -76,7 +76,7 @@ pkg install root-repo -y
 
 pkg install docker -y
 
-alpine
+# alpine
 ```
 service docker start
 service docker stop
