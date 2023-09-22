@@ -4,6 +4,7 @@
 bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/termux-docker/main/alpine.sh)
 ```
 
+# localhost
 
 ``
 mkdir -p /etc/udhcpc
@@ -24,6 +25,8 @@ echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 ``
 setup-alpine 
 ``
+---------------------------------
+# alpine
 
 ``
 rc-update add networking
