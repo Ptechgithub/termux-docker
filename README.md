@@ -72,8 +72,10 @@ service docker status
 
 # docker in termux
 
-## Termux
+
 ```
+## Termux
+
 pkg update -y
 pkg install root-repo -y
 pkg install docker -y
