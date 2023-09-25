@@ -43,7 +43,7 @@ apk update
 
 ```
 ssh root@localhost -p 2222
-nano /etc/ssh/sshd_config 
+vi /etc/ssh/sshd_config 
 AllowTcpForwarding yes
 GatewayPorts yes
 service sshd restart
