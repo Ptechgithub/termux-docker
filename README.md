@@ -72,6 +72,7 @@ service docker status
 
 # docker in termux
 
+```
 pkg update -y
 
 pkg install root-repo -y
@@ -79,7 +80,7 @@ pkg install root-repo -y
 pkg install docker -y
 
 # alpine
-```
+
 service docker start
 service docker stop
 dockerd -H tcp://0.0.0.0:2074 --iptables=false
