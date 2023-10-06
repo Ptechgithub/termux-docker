@@ -67,7 +67,7 @@ apk update
 apk add docker
 service docker start
 service docker status
-
+rc-update add docker boot
 ```
 
 # docker in termux
